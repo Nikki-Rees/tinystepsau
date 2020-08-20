@@ -26,4 +26,3 @@ tableName.sync({ force: true }).then(function () {
         IndependenceYear: 1919
     });
 });
-```
