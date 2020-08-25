@@ -1,14 +1,15 @@
+module.exports =
 {
   "development": {
-    "username": "u9xt6rf7itsbu7f0",
-    "password": "jog9kh6wj2jyx1oq",
+    "username": process.env.DB_USERNAME,
+    "password": process.env.DB_PASSWORD,
     "database": "lpb4g4j3d5puu9aw",
     "host": "qn0cquuabmqczee2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "u9xt6rf7itsbu7f0",
-    "password": "jog9kh6wj2jyx1oq",
+    "username": process.env.DB_USERNAME,
+    "password": process.env.DB_PASSWORD,
     "database": "lpb4g4j3d5puu9aw",
     "host": "qn0cquuabmqczee2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
