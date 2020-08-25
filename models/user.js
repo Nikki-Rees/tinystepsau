@@ -20,12 +20,14 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-
   User.associate = (models) => {
     // Associating User with Habits
     // If user is delete, delete associated habits
     User.hasMany(models.UserHabits, {
       onDelete: "cascade",
+    });
+    User.belongsToMany(models.Habits, {
+      through: "UserHabitCheckin"
     });
 
   };

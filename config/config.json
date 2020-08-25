@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": "!27ComptonRd",
-    "database": "tinysteps_db",
-    "host": "127.0.0.1",
+    "username": "u9xt6rf7itsbu7f0",
+    "password": "jog9kh6wj2jyx1oq",
+    "database": "lpb4g4j3d5puu9aw",
+    "host": "qn0cquuabmqczee2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "!27ComptonRd",
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "u9xt6rf7itsbu7f0",
+    "password": "jog9kh6wj2jyx1oq",
+    "database": "lpb4g4j3d5puu9aw",
+    "host": "qn0cquuabmqczee2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
