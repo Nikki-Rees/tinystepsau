@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Petit+Formal+Script&display=swap"
+    rel="stylesheet">
+
+  <title>Tiny Steps</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <!-- Host Cloud Template https://templatemo.com/tm-541-host-cloud -->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <header>
+
+    <!-- Nav bar Starts Here -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/images/tiny-steps.png" alt="" id="logo">
+        </a>
+        <div class="functional-buttons">
+          <ul>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Nav bar Ends Here -->
+
+    <!-- Video for banner -->
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="video">
+      <source src="assets/video/banner-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Main text on video -->
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white">
+          <h1>Everything starts with a tiny step...</h1>
+          <a href="/" class="main-button">Let's Get Started</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Benefits Starts Here -->
+  <div class="features-section">
+    <div class="background-image-pricing">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <span>Enjoy the</span>
+            <h2>Benefits</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-item">
+            <div class="icon">
+              <img src="assets/images/feature-01.png" alt="">
+            </div>
+            <h4>Stress Less</h4>
+            <p>Nulla nisl ex, vehicula in urna nec, commodo consectetur augue. Vivamus nec metus mauris. Praesent
+              lacinia.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-item">
+            <div class="icon">
+              <img src="assets/images/feature-01.png" alt="">
+            </div>
+            <h4>Achieve More</h4>
+            <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry
+              scenester.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-item">
+            <div class="icon">
+              <img src="assets/images/feature-01.png" alt="">
+            </div>
+            <h4>Develop Healthy Habits</h4>
+            <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry
+              scenester.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature-item">
+            <div class="icon">
+              <img src="assets/images/feature-01.png" alt="">
+            </div>
+            <h4>Enjoy Life</h4>
+            <p>Lorem ipsum dolor ame taxidermy sriracha cardigan salvia actually vice migas en pin sustainable carry
+              scenester.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Benefits Ends Here -->
+
+  <!-- Footer Starts Here -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-item">
+            <p>Copyright &copy; 2020 Tiny Steps</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Ends Here -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+    integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+    crossorigin="anonymous"></script>
+
+  <!-- Additional Scripts -->
+  <script src="js/custom.js"></script>
+
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
