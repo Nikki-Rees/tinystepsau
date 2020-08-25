@@ -1,15 +1,16 @@
+/* eslint-disable prettier/prettier */
 module.exports = (sequelize, DataTypes) => {
-    const UserHabitCheckin = sequelize.define("UserHabitCheckin", {
+  const UserHabitCheckin = sequelize.define("UserHabitCheckin", {
 
-        Checkin_date: DataTypes.DATE
+    Checkin_date: DataTypes.DATE
 
-    });
+  });
 
-    UserHabitCheckin.associate = (models) => {
+  UserHabitCheckin.associate = (models) => {
 
-        UserHabitCheckin.belongsTo(models.UserHabits)
+    UserHabitCheckin.belongsTo(models.UserHabits)
 
-    };
+  };
 
-    return UserHabits;
+  return UserHabitCheckin;
 };
