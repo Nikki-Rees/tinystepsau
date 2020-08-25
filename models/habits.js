@@ -10,9 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     Habits.associate = (models) => {
 
         Habits.hasMany(models.UserHabits);
-        Habits.belongsToMany(models.User, {
-            through: "UserHabitCheckin"
-        });
     };
 
     return Habits;
