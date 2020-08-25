@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 
         UserHabits.belongsTo(models.User)
         UserHabits.belongsTo(models.Habits)
-        UserHabits.hasMany(models.UserHabitsCheckin)
+        UserHabits.hasMany(models.UserHabitCheckin)
 
     };
 
