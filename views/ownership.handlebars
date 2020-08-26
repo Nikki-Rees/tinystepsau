@@ -1,0 +1,63 @@
+<h1>Take ownership</h1>
+
+<h3>Personalise your tiny step to make it achievable. How can you make it obvious, attractive, easy and satisfying?</h3>
+
+
+<div class="col-md-6">
+    <div class="feature-item">
+        <div class="icon">
+            <img src="assets/images/feature-01.png" alt="">
+        </div>
+        {{#each tasks}}
+        <li>
+            <h4>Name: {{this.name}}</h4>
+            <p>Habit description: {{this.description}}</p>
+            <p>Suggested frequency: {{this.frequency}}</p>
+        </li>
+        {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <h2>Make a plan to take ownership of your habit:</h2>
+    <form id="createownership" class="button-size">
+        <label for="obvious">Make it obvious:</label>
+        <textarea type="text" id="obvi" name="obvious"></textarea>
+        <label for="attractive">Make it attractive:</label>
+        <textarea type="text" id="attr" name="attractive"></textarea>
+        <label for="easy">Make it easy:</label>
+        <textarea type="text" id="easy" name="easy"></textarea>
+        <label for="satisfaction">Make it satisfying:</label>
+        <textarea type="text" id="sati" name="satisfaction"></textarea>
+        <button type="submit">Save plan!</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+
+    $("#takeownership").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // [name=plan] will find an element with a "name" attribute equal to the string "plan"
+        let newPlan = {
+            plan: $("#create [name=plan]").val().trim()
+        };
+
+        // Send the POST request.
+        $.ajax("/api/ownership", {
+            type: "POST",
+            data: newPlan
+        }).then(
+            function () {
+                console.log("created new ownership plan");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
+</script>
