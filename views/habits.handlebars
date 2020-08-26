@@ -1,0 +1,18 @@
+<h1>Select your tiny step </h1>
+
+<h3>and start form your habi</h3>
+
+<ul>
+    {{#each tasks}}
+    <li>
+        <p>ID: {{this.id}}</p>
+        <p>Task: {{this.task}}</p>
+    </li>
+    {{/each}}
+</ul>
+
+<form action="/" method="POST">
+    <textarea type="text" name="task"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
