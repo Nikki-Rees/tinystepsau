@@ -1,18 +1,30 @@
-<h1>Select your tiny step </h1>
+<h1>Check-in</h1>
 
-<h3>and start form your habi</h3>
+<h3>It takes 3 months to form a habit! Log your tiny step to track your progress</h3>
 
-<ul>
-    {{#each tasks}}
-    <li>
-        <p>ID: {{this.id}}</p>
-        <p>Task: {{this.task}}</p>
-    </li>
-    {{/each}}
-</ul>
 
-<form action="/" method="POST">
-    <textarea type="text" name="task"></textarea>
+<div class="col-md-6">
+    <div class="feature-item">
+        <div class="icon">
+            <img src="assets/images/feature-01.png" alt="">
+        </div>
+        {{#each tasks}}
+        <li>
+            <h4>Name: {{this.name}}</h4>
+            <h4>Description: {{this.description}}</h4>
+            <h4>Frequency: {{this.frequency}}</h4>
+            <p>Obvious: {{this.obvious_step}}</p>
+            <p>Attractive: {{this.attractive_step}}</p>
+            <p>Easy: {{this.easy_step}}</p>
+            <p>Satisfying: {{this.satisfaction_step}}</p>
+        </li>
+        {{/each}}
+        </ul>
+    </div>
+</div>
 
-    <button type="submit">Submit</button>
-</form>
+<div class="col-md-6">
+    <h2>Check-in, how did you do?</h2>
+    <button type="submit" id:"checkin">Tiny step complete!</button>
+    </form>
+</div>
