@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 
@@ -15,6 +16,7 @@ module.exports = function (app) {
       .then((habits) => {
         habits = habits.map((habit) => {
           return {
+            id: habit.id,
             type: habit.type,
             activity: habit.activity,
             description: habit.description,
