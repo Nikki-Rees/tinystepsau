@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Habits = sequelize.define("Habits", {
+    const Habit = sequelize.define("Habit", {
         // Giving the Habits model a name of type STRING
         type: DataTypes.STRING,
         activity: DataTypes.STRING,
@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
         frequency: DataTypes.STRING
     });
 
-    Habits.associate = (models) => {
+    Habit.associate = (models) => {
 
-        Habits.hasMany(models.UserHabits);
+        Habit.hasMany(models.User);
     };
 
-    return Habits;
+    return Habit;
 };
