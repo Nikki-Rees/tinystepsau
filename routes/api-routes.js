@@ -1,3 +1,4 @@
+/* eslint-disable */
 const db = require("../models");
 
 // Routes
@@ -43,11 +44,8 @@ module.exports = (app) => {
         // insert into our table. In this case we just we pass in an object with a text
         // and complete property (req.body)
         db.Checkin.create({
-
             userId: req.user.id,
             date: req.body.date,
-
-
         }).then((dbCheckin) => {
             // We have access to the new todo as an argument inside of the callback function
             res.json(dbCheckin);
@@ -55,9 +53,8 @@ module.exports = (app) => {
     });
     // update
     app.put("/api/user/habit", async (req, res) => {
-
         const user = await db.User.findOne({ where: { id: req.user.id } });
-        user.update({ habitId: req.body.habitId });
+        user.update({ HabitId: req.body.habitId });
         res.json(user);
         //$.ajax("/api/user/habit", {method:"PUT", data:{habitId:"~addbuttonidname~"}})
     });
