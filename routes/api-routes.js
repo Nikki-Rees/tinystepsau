@@ -19,8 +19,6 @@ module.exports = (app) => {
         // insert into our table. In this case we just we pass in an object with a text
         // and complete property (req.body)
         db.Habit.create({
-            text: req.body.text,
-            complete: req.body.complete,
             userId: req.user.id,
             name: req.body.name,
             description: req.body.description,
