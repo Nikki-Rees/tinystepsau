@@ -1,6 +1,6 @@
 <h1>Check-in</h1>
 
-<h3>It takes 3 months to form a habit! Log your tiny step to track your progress</h3>
+<h3>It takes 3 months to form a habit. Log your tiny step to track your progress</h3>
 
 
 <div class="col-md-6">
@@ -8,15 +8,11 @@
         <div class="icon">
             <img src="assets/images/feature-01.png" alt="">
         </div>
-        {{#each tasks}}
+        {{#each habit}}
         <li>
             <h4>Name: {{this.name}}</h4>
-            <h4>Description: {{this.description}}</h4>
-            <h4>Frequency: {{this.frequency}}</h4>
-            <p>Obvious: {{this.obvious_step}}</p>
-            <p>Attractive: {{this.attractive_step}}</p>
-            <p>Easy: {{this.easy_step}}</p>
-            <p>Satisfying: {{this.satisfaction_step}}</p>
+            <p>Habit description: {{this.description}}</p>
+            <p>Suggested frequency: {{this.frequency}}</p>
         </li>
         {{/each}}
         </ul>
