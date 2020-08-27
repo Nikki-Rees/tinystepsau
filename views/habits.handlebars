@@ -1,0 +1,35 @@
+<section>
+    <h1>Select your tiny step </h1>
+    <h3>and start form your habits</h3>
+    <div class="col-md-6">
+        <div class="feature-item">
+            {{#each habits}}
+            <p>{{this.type}}</p>
+            <p>{{this.activity}}</p>
+            <p>{{this.description}}</p>
+            <p>{{this.frequency}}</p>
+
+            {{else}}
+            <h1>There are no habits available</h1>
+            {{/each}}
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="col-md-6">
+        <h2>Make a plan to take ownership of your habit:</h2>
+        <form id="createownership" class="button-size">
+            <label for="obvious">Make it obvious:</label>
+            <textarea type="text" id="type" name="type"></textarea>
+            <label for="attractive">Make it attractive:</label>
+            <textarea type="text" id="activity" name="activity"></textarea>
+            <label for="easy">Make it easy:</label>
+            <textarea type="text" id="description" name="description"></textarea>
+            <label for="satisfaction">Make it satisfying:</label>
+            <textarea type="text" id="frequency" name="frequency"></textarea>
+            <button type="submit">Save plan!</button>
+        </form>
+    </div>
+</section>
