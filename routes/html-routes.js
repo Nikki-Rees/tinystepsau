@@ -3,6 +3,7 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("./../models");
 
 module.exports = function (app) {
   app.get("/", (req, res) => {
@@ -10,7 +11,7 @@ module.exports = function (app) {
   });
 
   app.get("/habits", (req, res) => {
-    db.Habits.findAll()
+    db.Habit.findAll()
       .then((habits) => {
         habits = habits.map((habit) => {
           return {
