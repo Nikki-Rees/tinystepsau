@@ -5,6 +5,26 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+
+  app.get("/habits", (req, res) => {
+    db.Habits.findAll()
+      .then((habits) => {
+        habits = habits.map((habit) => {
+          return {
+            type: habit.type,
+            activity: habit.activity,
+            description: habit.description,
+            frequency: habit.frequency,
+          };
+        });
+        res.render("habits", { habits });
+      })
+      .catch((err) => console.log(err));
+  });
+  
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
