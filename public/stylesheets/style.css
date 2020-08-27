@@ -88,37 +88,6 @@ a.gradient-button:hover {
 .section-heading p {
 	font-size: 15px;
 }
-.page-heading {
-	background-image: url(../images/heading-bg.jpg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;
-	padding: 230px 0px 180px 0px;
-}
-.page-heading h1 {
-	color: #fff;
-	font-size: 44px;
-	font-weight: 700;
-	letter-spacing: 0.5px;
-	margin-bottom: 20px;
-}
-.page-heading p {
-	color: #fff;
-	letter-spacing: 0.5px;
-}
-.page-heading p a {
-	color: #fff;
-	font-size: 15px;
-}
-.page-heading p a {
-	margin-right: 5px;
-}
-.page-heading p span {
-	color: #fff;
-	opacity: 0.75;
-	margin-left: 5px;
-}
 #preloader {
   overflow: hidden;
   background: linear-gradient(145deg, rgba(114,2,187,1) 0%, rgba(50,100,245,1) 100%);
@@ -130,7 +99,6 @@ a.gradient-button:hover {
   z-index: 9999999;
   color: #fff;
 }
-
 #preloader .jumper {
   left: 0;
   top: 0;
@@ -142,7 +110,6 @@ a.gradient-button:hover {
   width: 50px;
   height: 50px;
 }
-
 #preloader .jumper > div {
   background-color: #fff;
   width: 10px;
@@ -157,12 +124,10 @@ a.gradient-button:hover {
   -webkit-animation: jumper 1s 0s linear infinite;
   animation: jumper 1s 0s linear infinite;
 }
-
 #preloader .jumper > div:nth-child(2) {
   -webkit-animation-delay: 0.33333s;
   animation-delay: 0.33333s;
 }
-
 #preloader .jumper > div:nth-child(3) {
   -webkit-animation-delay: 0.66666s;
   animation-delay: 0.66666s;
@@ -368,6 +333,7 @@ header .overlay {
 	border-color: #00a4b9;
 }
 
+
 /* Benefits Style */
 .features-section {
 	margin-top: 120px;
@@ -419,43 +385,6 @@ footer p {
 }
 
 /* Responsive Style */
-@media (max-width: 1200px) {
-	.banner #search-section input.main-button {
-		position: absolute;
-		top: 75px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.banner #search-section input.searchText {
-		float: none;
-		width: 100%;
-	}
-	#search-section ul {
-		text-align: center;
-		margin-top: 80px;
-	}
-	#search-section ul li {
-		display: inline-block;
-		margin-bottom: 15px;
-		margin-right: 15px;
-	}
-	#search-section ul li fieldset label {
-		font-size: 12px;
-		margin-left: 5px;
-	}
-	#search-section ul li fieldset label em {
-		font-size: 13px;
-	}
-	.contact-us .right-content ul li {
-		text-align: center;
-		width: 100%;
-	}
-	.contact-us .right-content ul li i {
-		margin-right: 15px;
-		margin-left: 15px;
-		margin-bottom: 15px;
-	}
-}
 @media (max-width: 991px) {
 	.navbar .navbar-brand {
 		position: absolute;
@@ -468,14 +397,6 @@ footer p {
 		top: 20px;
 		transform: translate(-50%);
 		margin-left: 15px;
-	}
-	.banner #search-section fieldset button {
-		margin-top: 0px;
-	}
-	.banner #search-section fieldset input {
-		width: 100%;
-		min-width: 280px;
-		margin-bottom: 30px;
 	}
 	.navbar .navbar-brand {
 		width: auto;
@@ -506,34 +427,9 @@ footer p {
 	.navbar .navbar-nav .active>.nav-link {
 		color: #00bcd4!important;
 	}
-	.about-us .left-image {
-		margin-bottom: 30px;
-		margin-right: 0px;
-	}
-	.about-us .right-content,
-	.contact-us .right-content {
-		margin-left: 0px;
-	}
-	.contact-us .contact-form {
-		margin-right: 0px;
-		margin-bottom: 45px;
-	}
-	.contact-us .right-content ul {
-		margin-bottom: 30px;
-	}
-	.contact-us .right-content ul li {
-		text-align: left;
-		width: 100%;
-	}
-	.contact-us .right-content ul li i {
-		margin-left: 0px;
-	}
 }
 
 @media (max-width: 767px) {
-	.pricing-item  {
-		margin-bottom: 55px;
-	}
 	.footer-item {
 		margin-bottom: 60px;
 	}
