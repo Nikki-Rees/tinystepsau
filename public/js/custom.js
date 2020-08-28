@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Page loading animation
 $(window).on('load', function () {
     if ($('.cover').length) {
@@ -16,14 +17,13 @@ $(window).on('load', function () {
     });
 });
 
+// Nav bar scrolling animation
 $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    var box = $('.header-text').height();
-    var header = $('header').height();
-
-    if (scroll >= box - header) {
-        $("header").addClass("background-header");
+    if ($(window).scrollTop() >= 1) {
+        $("nav").addClass("background-header");
+        $("#logo").attr("src", "assets/images/tiny-steps-black.png")
     } else {
-        $("header").removeClass("background-header");
+        $("nav").removeClass("background-header");
+        $("#logo").attr("src", "assets/images/tiny-steps.png")
     }
 });
