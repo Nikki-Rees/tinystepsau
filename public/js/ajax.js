@@ -1,6 +1,7 @@
 
     // Send the PUT request for habit.
-    $.ajax("/api/user/habit", {method:"PUT", data:{habitId:"~addbuttonidname~"}}).then(
+$.ajax("/api/user/habit", { method: "PUT", data: { habitId: "~addbuttonidname~" } })
+    .then(
         () => {
             console.log("put habit", newSleep);
             // Reload the page to get the updated list

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Checkin.associate = (models) => {
 
-    Checkin.belongsTo(models.User)
+    Checkin.belongsTo(models.User);
 
   };
 
