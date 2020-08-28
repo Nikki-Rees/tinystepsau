@@ -369,7 +369,18 @@ header .overlay {
 	margin-left: 106px;
 }
 
+.habit {
 
+	/* display: inline-block; */
+	background-color: #00bcd4;
+	border: 2px solid #fff;
+	font-size: 16px;
+	color: #fff;
+	margin: 6px;
+	padding: 6px 20px;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+}
 /* Footer Style */
 footer {
 	background-image: url(../assets/images/footer-bg.jpg);
