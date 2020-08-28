@@ -9,25 +9,7 @@ $(document).ready(() => {
         }).then(() => {
             console.log("put habit");
             // Reload the page to get the updated list
-            window.location.replace("/checkin");
+            window.location.replace("/api/checkins");
         });
     });
-
-    $(".checkinButton").on("click", (event) => {
-        event.preventDefault();
-        
-        // Send the POST request.
-        $.ajax("/api/checkins", {
-            method: "POST",
-            data: { date: Date.now() }
-        }).then(
-            () => {
-                console.log("User has checked in");
-                // Reload the page 
-                location.reload();
-                //disable check in button until date changed
-            }
-        );
-    });
-
 });
