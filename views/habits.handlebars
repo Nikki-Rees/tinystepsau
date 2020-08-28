@@ -4,12 +4,14 @@
     <div class="col-md-6">
         <div class="feature-item">
             {{#each habits}}
-            <div class="habit" data-id="{{this.id}}">  
-                {{this.type}}
-                {{this.activity}}
+          
+            <button class="habit" data-id="{{this.id}}">  
+    
+               Type: {{this.type}}
+               Description{{this.activity}}
                 {{this.description}}
                 {{this.frequency}}
-            </div>
+                   </button>
             {{else}}
             <h1>There are no habits available</h1>
             {{/each}}
