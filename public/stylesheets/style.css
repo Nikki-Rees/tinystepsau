@@ -409,6 +409,8 @@ footer p {
 	color: #00bcd4;
 	border: 2px solid #00bcd4;
 	font-size: 13px;
+	background-color: white;
+	text-transform: uppercase;
 }
 .habit:hover {
 	background-color: #00bcd4;
@@ -419,6 +421,7 @@ footer p {
 	margin: 40px 40px;
 }
 
+
 /* Create your own habit styling */
 #create-habit {
 	text-align: left;
@@ -426,6 +429,7 @@ footer p {
 .form-control {
 	margin-bottom: 15px;
 }
+
 
 /* Checkin styling */
 .heading {
@@ -439,4 +443,12 @@ footer p {
 	height: 100vh;
 	background: rgb(0,188,212);
 	background: linear-gradient(0deg, rgba(0,188,212,1) 0%, rgba(250,251,251,1) 51%);	
+}
+
+
+/* Select habits page styling */
+#modalButton {
+	position: fixed;
+  bottom: 90px;
+  right: 60px;
 }
