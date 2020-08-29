@@ -12,4 +12,5 @@ $(document).ready(() => {
             window.location.replace("/api/checkins");
         });
     });
+
 });
