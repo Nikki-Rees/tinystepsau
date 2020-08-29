@@ -1,29 +1,23 @@
-<h1>Check-in</h1>
-
-<h3>It takes 3 months to form a habit. Log your tiny step to track your progress</h3>
-
-
-<div class="col-md-6">
-    <div class="feature-item">
-        <div class="icon">
-            <img src="assets/images/feature-01.png" alt="">
+<div class="container focus">
+    <div class="row justify-content-center">
+        <div class="col-md-12 heading">
+            <h2>Check-in!</h2>
+            <h4>It takes 3 months to form a habit. <br> Log your tiny step to track your progress.</h4>
         </div>
-
-        //the habit that the user has selected
-      
-        <li>
-            <h4>Name: {{habit.name}}</h4>
-            <p>Habit description: {{habit.description}}</p>
-            <p>Suggested frequency: {{habit.frequency}}</p>
-        </li>
-        
-        </ul>
     </div>
-</div>
 
-<div class="col-md-6">
-    <h2>Check-in, how did you do?</h2>
-    //*add form with action and method just like create-habit
-    <button type="submit" id="checkin-button">Tiny step complete!</button>
- 
+    <div class="row">
+        <div class="col-md-6 habitDetails">
+
+            <h5>Habit: {{habit.activity}}</h5>
+            <p>Description: {{habit.description}}</p>
+            <p>Suggested frequency: {{habit.frequency}}</p>
+
+        </div>
+        <div class="col-md-5">
+            <h4>Check-in, <br> how did you do?</h4>
+            <button type="submit" id="checkin-button" class="blueButton">Tiny step complete!</button>
+        </div>
+    </div>
+
 </div>
