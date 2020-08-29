@@ -15,15 +15,10 @@ module.exports = function (app) {
     db.Habit.findAll()
       .then((habits) => {
         habits = habits.map((habit) => {
-          return {
-            id: habit.id,
-            type: habit.type,
-            activity: habit.activity,
-            description: habit.description,
-            frequency: habit.frequency,
-          };
+          return habit.dataValues
         });
-        res.render("habits", { habits });
+        
+        res.render("habits", { habits } );
       })
       .catch((err) => console.log(err));
   });
@@ -48,5 +43,24 @@ module.exports = function (app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+
+  app.get("/checkin", isAuthenticated, (req, res) => {
+    db.Habit.findOne({ where: { id: req.user.HabitId } }).then((habit) => {
+      res.render("checkin", { habit: habit.dataValues });
+    });
+
+  });
+
+
+  app.post("/create-habit", (req, res) => {
+    db.Habit.create({
+      type: req.body.type,
+      activity: req.body.activity,
+      description: req.body.description,
+      frequency: req.body.frequency,
+    }).then((dbHabit) => {
+      res.redirect("checkin");
+    });
   });
 };

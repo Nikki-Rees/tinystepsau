@@ -8,19 +8,22 @@
         <div class="icon">
             <img src="assets/images/feature-01.png" alt="">
         </div>
-        {{#each habit}}
+
+        //the habit that the user has selected
+      
         <li>
-            <h4>Name: {{this.name}}</h4>
-            <p>Habit description: {{this.description}}</p>
-            <p>Suggested frequency: {{this.frequency}}</p>
+            <h4>Name: {{habit.name}}</h4>
+            <p>Habit description: {{habit.description}}</p>
+            <p>Suggested frequency: {{habit.frequency}}</p>
         </li>
-        {{/each}}
+        
         </ul>
     </div>
 </div>
 
 <div class="col-md-6">
     <h2>Check-in, how did you do?</h2>
-    <button type="submit" id:"checkin">Tiny step complete!</button>
-    </form>
+    //*add form with action and method just like create-habit
+    <button type="submit" id="checkin-button">Tiny step complete!</button>
+ 
 </div>
