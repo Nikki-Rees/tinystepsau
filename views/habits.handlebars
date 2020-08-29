@@ -1,10 +1,8 @@
 <div class="container focus">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h4>Select your tiny step</h4>
             <h6>to begin the journey to a healthy habit</h6>
-        </div>
-        <div class="row">
             <div class="habitOption">
                 {{#each habits}}
                 <button class="habit" data-id="{{this.id}}">
@@ -20,9 +18,11 @@
             </div>
         </div>
     </div>
+
+    {{> create-habit}}
+
 </div>
 
-{{> create-habit}}
 
 <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
