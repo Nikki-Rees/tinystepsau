@@ -1,19 +1,36 @@
-<div class="row">
-    <div class="col-md-12">
-        <h5>Create your own habit:</h5>
-        <form id="create-habit" class="button-size" action="/create-habit" method="POST">
-            <div class="form-group">
-                <label for="type">Type of habit:</label>
-                <textarea required type="text" class="form-control" id="type" name="type" rows="1"></textarea>
-                <label for="activity">Activity:</label>
-                <textarea required type="text" class="form-control" id="activity" name="activity" rows="1"></textarea>
-                <label for="description">Description of habit:</label>
-                <textarea required type="text" class="form-control" id="description" name="description"
-                    rows="1"></textarea>
-                <label for="frequency">Frequency of habit:</label>
-                <textarea required type="text" class="form-control" id="frequency" name="frequency" rows="1"></textarea>
-                <button type="submit" class="blueButton">Save your new habit!</button>
+<!-- Button to show modal -->
+<button type="button" class="blueButton" id="modalButton" data-toggle="modal" data-target="#exampleModal">
+    Create your own habit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create your own habit:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </form>
+            <div class="modal-body">
+                <form id="create-habit" class="button-size" action="/create-habit" method="POST">
+                    <div class="form-group">
+                        <label for="type">Type of habit:</label>
+                        <textarea required type="text" class="form-control" id="type" name="type" rows="1"></textarea>
+                        <label for="activity">Activity:</label>
+                        <textarea required type="text" class="form-control" id="activity" name="activity"
+                            rows="1"></textarea>
+                        <label for="description">Description of habit:</label>
+                        <textarea required type="text" class="form-control" id="description" name="description"
+                            rows="1"></textarea>
+                        <label for="frequency">Frequency of habit:</label>
+                        <textarea required type="text" class="form-control" id="frequency" name="frequency"
+                            rows="1"></textarea>
+                        <button type="submit" class="blueButton">Save your new habit!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
