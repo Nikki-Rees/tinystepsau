@@ -1,25 +1,27 @@
-<section>
-    <h1>Select your tiny step </h1>
-    <h3>and start form your habits</h3>
-    <div class="col-md-6">
-        <div class="feature-item">
-            {{#each habits}}
-          
-            <button class="habit" data-id="{{this.id}}">  
-    
-               <b>Type:</b> {{this.type}}
-               <b>Activity:</b> {{this.activity}}
-               <b>Description:</b> {{this.description}}
-               <b>Frequency:</b> {{this.frequency}}
-                   </button>
-            {{else}}
-            <h1>There are no habits available</h1>
-            {{/each}}
+<div class="container focus">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4>Select your tiny step</h4>
+            <h6>to begin the journey to a healthy habit</h6>
+        </div>
+        <div class="row">
+            <div class="habitOption">
+                {{#each habits}}
+                <button class="habit whiteButton" data-id="{{this.id}}">
+                    <b>Type:</b> {{this.type}} <br>
+                    <b>Activity:</b> {{this.activity}} <br>
+                    <b>Description:</b> {{this.description}} <br>
+                    <b>Frequency:</b> {{this.frequency}}
+                </button>
 
+                {{else}}
+                <h1>There are no habits available</h1>
+                {{/each}}
+            </div>
         </div>
     </div>
+</div>
 
 {{> create-habit}}
-    
-</section>
+
 <script src="/js/habits.js"></script>
