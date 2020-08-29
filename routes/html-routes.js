@@ -6,7 +6,7 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("./../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
@@ -15,14 +15,14 @@ module.exports = function (app) {
     db.Habit.findAll()
       .then((habits) => {
         habits = habits.map((habit) => {
-          return habit.dataValues
+          return habit.dataValues;
         });
-        
-        res.render("habits", { habits } );
+
+        res.render("habits", { habits });
       })
       .catch((err) => console.log(err));
   });
-  
+
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -32,9 +32,9 @@ module.exports = function (app) {
   });
 
   app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the checkin page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/checkin");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -49,9 +49,20 @@ module.exports = function (app) {
     db.Habit.findOne({ where: { id: req.user.HabitId } }).then((habit) => {
       res.render("checkin", { habit: habit.dataValues });
     });
-
   });
 
+  // app.post("/save-checkin", isAuthenticated, (req, res) => {
+  //   console.log("checked in!");
+  //   // const user = await db.User.findAll({
+  //   //   where: { userId: req.user.id },
+  //   // });
+  //   db.Checkin.create({
+  //     userId: req.user.id,
+  //     date: req.body.date,
+  //   }).then(() => {
+  //     res.redirect("habits");
+  //   });
+  // });
 
   app.post("/create-habit", (req, res) => {
     db.Habit.create({
