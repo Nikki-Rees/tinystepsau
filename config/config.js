@@ -5,17 +5,17 @@ module.exports = {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     port: 3306,
-    dialect: "mysql"
+    dialect: "mysql",
   },
   test: {
-    username: "root",
-    password: "!27ComptonRd",
-    database: "tinysteps_db",
-    host: "localhost",
-    dialect: "mysql"
+    username: process.env.LOCAL_USERNAME,
+    password: process.env.LOCAL_PASSWORD,
+    database: process.env.LOCAL_DATABASE,
+    host: process.env.LOCAL_HOST,
+    dialect: "mysql",
   },
   production: {
     use_env_variable: "JAWSDB_URL",
-    dialect: "mysql"
-  }
+    dialect: "mysql",
+  },
 };
