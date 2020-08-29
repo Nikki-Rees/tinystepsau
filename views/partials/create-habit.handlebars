@@ -1,12 +1,19 @@
-<h2>Create your own habit:</h2>
-<form id="create-habit" class="button-size" action="/create-habit" method="POST">
-    <label for="type">Type of habit:</label>
-    <textarea required type="text" id="type" name="type"></textarea>
-    <label for="activity">Activity:</label>
-    <textarea required type="text" id="activity" name="activity"></textarea>
-    <label for="description">Description of habit:</label>
-    <textarea required type="text" id="description" name="description"></textarea>
-    <label for="frequency">Frequency of habit:</label>
-    <textarea required type="text" id="frequency" name="frequency"></textarea>
-    <button type="submit">Save your new habit!</button>
-</form>
+<div class="row">
+    <div class="col-md-12">
+        <h5>Create your own habit:</h5>
+        <form id="create-habit" class="button-size" action="/create-habit" method="POST">
+            <div class="form-group">
+                <label for="type">Type of habit:</label>
+                <textarea required type="text" class="form-control" id="type" name="type" rows="1"></textarea>
+                <label for="activity">Activity:</label>
+                <textarea required type="text" class="form-control" id="activity" name="activity" rows="1"></textarea>
+                <label for="description">Description of habit:</label>
+                <textarea required type="text" class="form-control" id="description" name="description"
+                    rows="1"></textarea>
+                <label for="frequency">Frequency of habit:</label>
+                <textarea required type="text" class="form-control" id="frequency" name="frequency" rows="1"></textarea>
+                <button type="submit" class="blueButton">Save your new habit!</button>
+            </div>
+        </form>
+    </div>
+</div>
