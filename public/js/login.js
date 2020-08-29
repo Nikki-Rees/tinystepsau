@@ -29,7 +29,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/habits");
+        window.location.replace("/checkin");
         // If there's an error, log the error
       })
       .catch(err => {
