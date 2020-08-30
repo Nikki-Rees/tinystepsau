@@ -27,10 +27,7 @@ $(document).ready(() => {
 
   function createNewHabit(newHabit) {
     $.post("/api/create-habit", {
-      type: newHabit.type,
-      activity: newHabit.activity,
-      description: newHabit.description,
-      frequency: newHabit.frequency,
+      habit: newHabit,
     }).then((data) => {
         console.log(data);
         window.location.replace("/checkin");
