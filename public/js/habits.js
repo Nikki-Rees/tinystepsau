@@ -9,7 +9,7 @@ $(document).ready(() => {
         }).then(() => {
             console.log("put habit");
             // Reload the page to get the updated list
-            window.location.replace("/checkin");
+            location.replace("/checkin");
         });
     });
 });
