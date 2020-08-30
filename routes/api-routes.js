@@ -47,9 +47,9 @@ module.exports = (app) => {
     
     // update
     //*
-    app.put("/api/user/habit", async (req, res) => {
+    app.post("/api/user/habit", async (req, res) => {
         const user = await db.User.findOne({ where: { id: req.user.id } });
-        user.update({ HabitId: req.body.habitId });
+        user.update({ HabitId: req.body.HabitId });
         res.json(user);
         //$.ajax("/api/user/habit", {method:"PUT", data:{habitId:"~addbuttonidname~"}})
     });
