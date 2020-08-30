@@ -48,14 +48,14 @@ module.exports = function (app) {
 
 
   app.get("/checkin", isAuthenticated, (req, res) => {
+    // console.log(req)
     db.Habit.findOne({ where: { id: req.user.HabitId } })
       .then((habit) => {
-
+        // console.log("HEY I'M TRIGGERING")
         res.render("checkin", { habit: habit.dataValues });
         // res.redirect("/checkin");
       });
 
   });
-
 };
 

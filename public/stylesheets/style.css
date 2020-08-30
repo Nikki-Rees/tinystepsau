@@ -475,3 +475,9 @@ footer p {
 	background: rgb(0,188,212);
 	background: linear-gradient(0deg, rgba(0,188,212,1) 0%, rgba(250,251,251,1) 51%);	
 }
+
+#myChart {
+	max-width: 400px;
+	max-height: 400px;
+	margin-top: 50px;
+}

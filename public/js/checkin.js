@@ -11,7 +11,7 @@ $(document).ready(() => {
       UserId: userId,
     })
       .then((data) => {
-   
+
 
         //need login to disable check in button until date changed
         // maybe display a handlebars that says "You've checked in your habit for today"
@@ -21,11 +21,11 @@ $(document).ready(() => {
       });
   });
 
-  $("sendTest").on("click",  (event)=> {
+  $("sendTest").on("click", (event) => {
     event.preventDefault();
     $.post("/api/checkin-email", {
       email
     })
-})
+  })
 
 });
