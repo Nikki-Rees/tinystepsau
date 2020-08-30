@@ -1,3 +1,4 @@
+/* eslint-disable */
 $(document).ready(() => {
   // Getting references to our form and inputs
   const loginForm = $("form.login");
@@ -12,23 +13,23 @@ $(document).ready(() => {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
-      return;
+    if (userData.email && userData.password) {
+      // If we have an email and password we run the loginUser function and clear the form
+      loginUser(userData);
+      emailInput.val("");
+      passwordInput.val("");
     }
-
-    // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
   });
 
-  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the /checkin page
+  function loginUser(userData) {
     $.post("/api/login", {
-      email: email,
-      password: password
+      email: userData.email,
+      password: userData.password
     })
-      .then(() => {
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("id", data.id);
         window.location.replace("/checkin");
         // If there's an error, log the error
       })
