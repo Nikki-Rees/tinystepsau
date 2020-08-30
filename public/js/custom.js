@@ -19,11 +19,12 @@ $(window).on('load', function () {
 
 // Nav bar scrolling animation
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= 1) {
+    const logoColourState = $("#logo").attr("src")
+    if ($(window).scrollTop() >= 1 && logoColourState === "assets/images/tiny-steps-black.png") {
         $("nav").addClass("background-header");
         $("#logo").attr("src", "assets/images/tiny-steps-black.png")
     } else {
         $("nav").removeClass("background-header");
-        $("#logo").attr("src", "assets/images/tiny-steps.png")
+        $("#logo").attr("src", "assets/images/tiny-steps-black.png")
     }
 });

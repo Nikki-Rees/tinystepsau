@@ -152,6 +152,32 @@ header {
   width: 100%;
   overflow: hidden;
 }
+.navbarLogout {
+	background-color: white;
+	position: relative;
+  height: 0px;
+  min-height: 80px;
+  width: 100%;
+	overflow: hidden;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+}
+.newHabitButton {
+	display: inline-block;
+	padding: 6px 20px;
+	text-align: left;
+	color: #00bcd4;
+	border: 2px solid #00bcd4;
+	font-size: 13px;
+	background-color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+}
+.newHabitButton:hover {
+	background-color: #00bcd4;
+	border: 2px solid #00bcd4;
+	color: #fff;
+}
 .navbar {
 	position: fixed;
 	z-index: 99999;
@@ -429,6 +455,11 @@ footer p {
 .form-control {
 	margin-bottom: 15px;
 }
+#modalButton {
+	position: fixed;
+  bottom: 90px;
+  right: 60px;
+}
 
 
 /* Checkin styling */
@@ -443,12 +474,4 @@ footer p {
 	height: 100vh;
 	background: rgb(0,188,212);
 	background: linear-gradient(0deg, rgba(0,188,212,1) 0%, rgba(250,251,251,1) 51%);	
-}
-
-
-/* Select habits page styling */
-#modalButton {
-	position: fixed;
-  bottom: 90px;
-  right: 60px;
 }
