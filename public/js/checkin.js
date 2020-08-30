@@ -20,4 +20,12 @@ $(document).ready(() => {
         console.log(err);
       });
   });
+
+  $("sendTest").on("click",  (event)=> {
+    event.preventDefault();
+    $.post("/api/checkin-email", {
+      email
+    })
+})
+
 });

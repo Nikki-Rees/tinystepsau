@@ -28,8 +28,8 @@ $(document).ready(() => {
       password: userData.password
     })
       .then((data) => {
-        console.log(data);
         localStorage.setItem("id", data.id);
+        localStorage.setItem("userEmail", data.email)
         window.location.replace("/checkin");
         // If there's an error, log the error
       })
