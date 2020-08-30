@@ -48,7 +48,8 @@ module.exports = (app) => {
             date: req.body.date,
         }).then((dbCheckin) => {
             // We have access to the new todo as an argument inside of the callback function
-            res.json(dbCheckin);
+            res.redirect("checkin")
+            // res.json(dbCheckin);
         });
     });
     // update
