@@ -50,11 +50,11 @@ module.exports = function (app) {
   app.get("/checkin", isAuthenticated, (req, res) => {
     db.Habit.findOne({ where: { id: req.user.HabitId } })
       .then((habit) => {
-    
+
         res.render("checkin", { habit: habit.dataValues });
         // res.redirect("/checkin");
       });
-      
+
   });
 
 };
