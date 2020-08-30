@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
 module.exports = (sequelize, DataTypes) => {
   const Checkin = sequelize.define("Checkin", {
-
-    date: DataTypes.DATE
-
+    // date: DataTypes.STRING,
+    test: DataTypes.STRING,
   });
 
   Checkin.associate = (models) => {

@@ -1,5 +1,6 @@
 /* eslint-disable */
 const db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
@@ -13,45 +14,37 @@ module.exports = (app) => {
         }
     });
 
-    // POST route for saving a new todo
-    app.post("/api/habit", (req, res) => {
-        console.log(req.body);
-        // create takes an argument of an object describing the item we want to
-        // insert into our table. In this case we just we pass in an object with a text
-        // and complete property (req.body)
-        db.Habit.create({
-            userId: req.user.id,
-            name: req.body.name,
-            description: req.body.description,
-            frequency: req.body.frequency
-
-        }).then((dbHabit) => {
-            // We have access to the new todo as an argument inside of the callback function
-            res.json(dbHabit);
-        });
+    app.post("/api/create-habit", (req, res) => {
+      db.Habit.create({
+        type: req.body.type,
+        activity: req.body.activity,
+        description: req.body.description,
+        frequency: req.body.frequency,
+      }).then((dbHabit) => {
+        console.log(dbHabit);
+        res.redirect("/checkin");
+      });
     });
 
     // GET route for getting all of the checkin options NOTE for use within public js file > $.ajax("/api/checkins")
+    //for our google chart and calendar
     app.get("/api/checkins", async (req, res) => {
-        const checkins = await db.Checkin.findAll({ where: { userId: req.user.id } });
+        const checkins = await db.Checkin.findAll({ where: { UserId: req.user.id } });
         res.json(checkins);
     });
 
-    // POST route for saving a new todo
-    app.post("/api/checkin", (req, res) => {
-        console.log(req.body);
-        // create takes an argument of an object describing the item we want to
-        // insert into our table. In this case we just we pass in an object with a text
-        // and complete property (req.body)
-        db.Checkin.create({
-            userId: req.user.id,
-            date: req.body.date,
-        }).then((dbCheckin) => {
-            // We have access to the new todo as an argument inside of the callback function
-            res.redirect("checkin")
-            // res.json(dbCheckin);
-        });
+    app.post("/api/checkin", isAuthenticated, (req, res) => {
+      
+      db.Checkin.create({
+        UserId: userId,
+        test: "this is a test",
+      }).then((data) => {
+        res.json({success: true, data: data});
+        // res.redirect("/checkin");
+      });
     });
+
+    
     // update
     //*
     app.put("/api/user/habit", async (req, res) => {

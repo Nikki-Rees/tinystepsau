@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/checkin");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -51,27 +51,5 @@ module.exports = function(app) {
     });
   });
 
-  // app.post("/save-checkin", isAuthenticated, (req, res) => {
-  //   console.log("checked in!");
-  //   // const user = await db.User.findAll({
-  //   //   where: { userId: req.user.id },
-  //   // });
-  //   db.Checkin.create({
-  //     userId: req.user.id,
-  //     date: req.body.date,
-  //   }).then(() => {
-  //     res.redirect("habits");
-  //   });
-  // });
-
-  app.post("/create-habit", (req, res) => {
-    db.Habit.create({
-      type: req.body.type,
-      activity: req.body.activity,
-      description: req.body.description,
-      frequency: req.body.frequency,
-    }).then((dbHabit) => {
-      res.redirect("checkin");
-    });
-  });
+  
 };
