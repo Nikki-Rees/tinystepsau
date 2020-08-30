@@ -1,6 +1,7 @@
 /* eslint-disable */
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const nodemailer = require("nodemailer");
 
 // Routes
 // =============================================================
@@ -34,12 +35,10 @@ module.exports = (app) => {
     });
 
     app.post("/api/checkin", isAuthenticated, (req, res) => {
-      
       db.Checkin.create({
         UserId: req.body.UserId,
       }).then((data) => {
         res.json({success: true, data: data});
-        // res.redirect("/checkin");
       });
     });
 
@@ -64,10 +63,10 @@ module.exports = (app) => {
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: "bar@example.com, baz@example.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        to: req.body.email, // list of receivers
+        subject: "Habit checkin", // Subject line
+        text: "Congratulations! You've checked in your habit.", // plain text body
+        // html: "<b>Hello world?</b>", // html body
       });
 
       console.log("Message sent: %s", info.messageId);

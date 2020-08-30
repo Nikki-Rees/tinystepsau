@@ -9,7 +9,7 @@ module.exports = {
   },
   test: {
     username: "root",
-    password: "liaCM345!",
+    password: "rootuser",
     database: "tinysteps_db",
     host: "localhost",
     port: 3306,
