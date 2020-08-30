@@ -6,7 +6,7 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("./../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
@@ -45,11 +45,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+
   app.get("/checkin", isAuthenticated, (req, res) => {
-    db.Habit.findOne({ where: { id: req.user.HabitId } }).then((habit) => {
-      res.render("checkin", { habit: habit.dataValues });
-    });
+    db.Habit.findOne({ where: { id: req.user.HabitId } })
+      .then((habit) => {
+    
+        res.render("checkin", { habit: habit.dataValues });
+        res.redirect("/checkin");
+      });
+      
   });
 
-  
 };
+

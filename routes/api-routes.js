@@ -36,9 +36,8 @@ module.exports = (app) => {
     app.post("/api/checkin", isAuthenticated, (req, res) => {
       
       db.Checkin.create({
-        UserId: req.body.UserId,
-        test: "this is a test",
-      }).then((data) => {
+        UserId: req.body.UserId
+           }).then((data) => {
         res.json({success: true, data: data});
         // res.redirect("/checkin");
       });
@@ -51,8 +50,8 @@ module.exports = (app) => {
         const user = await db.User.findOne({ where: { id: req.user.id } });
         user.update({ HabitId: req.body.HabitId });
         res.json(user);
+    
         //$.ajax("/api/user/habit", {method:"PUT", data:{habitId:"~addbuttonidname~"}})
     });
 
-    
 };
