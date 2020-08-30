@@ -15,14 +15,14 @@ module.exports = (app) => {
     });
 
     app.post("/api/create-habit", (req, res) => {
+      let newHabit = req.body.habit
       db.Habit.create({
-        type: req.body.type,
-        activity: req.body.activity,
-        description: req.body.description,
-        frequency: req.body.frequency,
+        type: newHabit.type,
+        activity: newHabit.activity,
+        description: newHabit.description,
+        frequency: newHabit.frequency,
       }).then((dbHabit) => {
-        console.log(dbHabit);
-        res.redirect("/checkin");
+        res.json(dbHabit);
       });
     });
 
@@ -36,7 +36,7 @@ module.exports = (app) => {
     app.post("/api/checkin", isAuthenticated, (req, res) => {
       
       db.Checkin.create({
-        UserId: userId,
+        UserId: req.body.UserId,
         test: "this is a test",
       }).then((data) => {
         res.json({success: true, data: data});
