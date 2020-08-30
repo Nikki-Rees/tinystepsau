@@ -11,7 +11,7 @@ $(document).ready(() => {
       UserId: userId,
     })
       .then((data) => {
-        console.log(data);
+   
 
         //need login to disable check in button until date changed
         // maybe display a handlebars that says "You've checked in your habit for today"

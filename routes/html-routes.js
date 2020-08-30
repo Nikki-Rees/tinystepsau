@@ -51,7 +51,7 @@ module.exports = function (app) {
       .then((habit) => {
     
         res.render("checkin", { habit: habit.dataValues });
-        res.redirect("/checkin");
+        // res.redirect("/checkin");
       });
       
   });
