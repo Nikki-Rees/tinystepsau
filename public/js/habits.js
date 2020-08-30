@@ -33,13 +33,20 @@ $(document).ready(() => {
         window.location.replace("/checkin");
     });
   }
-});
 
-// const id = $(this).data("id");
-// $.post("/api/user/habit", {
-//   method: "PUT",
-//   data: { habitId: id },
-// }).then(() => {
-//   // Reload the page to get the updated list
-//   window.location.replace("/checkin");
-// });
+  $(".habit").on("click", function () {
+    event.preventDefault();
+      console.log("habit clicked");
+
+      const id = $(this).data("id");
+
+      $.post("/api/user/habit", {
+        HabitId: id,
+      })
+      .then((data) => {
+          console.log(data);
+          // Reload the page to get the updated list
+           window.location.replace("/checkin");
+      });
+  });
+});
