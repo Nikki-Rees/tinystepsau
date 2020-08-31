@@ -4,7 +4,7 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
-    port: process.env.PORT,
+    port: 3306,
     dialect: "mysql"
   },
   test: {
@@ -12,11 +12,11 @@ module.exports = {
     password: process.env.LOCAL_PASSWORD,
     database: process.env.LOCAL_DATABASE,
     host: process.env.LOCAL_HOST,
-    port: process.env.PORT,
+    port: 3306,
     dialect: "mysql"
   },
   production: {
-    connection: process.env.JAWSDB_URL,
+    connection: "JAWSDB_URL",
     dialect: "mysql"
   }
 };
