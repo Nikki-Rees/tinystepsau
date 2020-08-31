@@ -8,12 +8,12 @@ const nodemailer = require("nodemailer");
 module.exports = (app) => {
 
     // GET route for getting all of the habit options
-    app.get("/api/habits", (req, res) => {
-        const query = {};
-        if (req.query.habit_id) {
-            query.HabitId = req.query.habit_id;
-        }
-    });
+    // app.get("/api/habits", (req, res) => {
+    //     const query = {};
+    //     if (req.query.habit_id) {
+    //         query.HabitId = req.query.habit_id;
+    //     }
+    // });
 
     app.post("/api/create-habit", (req, res) => {
       let newHabit = req.body.habit
@@ -62,7 +62,7 @@ module.exports = (app) => {
 
       // send mail with defined transport object
       let info = await transporter.sendMail({
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
+        from: '"Your Life Coach" <foo@example.com>', // sender address
         to: req.body.email, // list of receivers
         subject: "Habit checkin", // Subject line
         text: "Congratulations! You've checked in your habit.", // plain text body
@@ -81,13 +81,10 @@ module.exports = (app) => {
   });
     
     // update
-    //*
     app.post("/api/user/habit", async (req, res) => {
         const user = await db.User.findOne({ where: { id: req.user.id } });
         user.update({ HabitId: req.body.HabitId });
         res.json(user);
-    
-        //$.ajax("/api/user/habit", {method:"PUT", data:{habitId:"~addbuttonidname~"}})
     });
 
 };
