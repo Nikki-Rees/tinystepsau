@@ -1,8 +1,7 @@
-/* eslint-disable prettier/prettier */
-module.exports = (sequelize, DataTypes) => {
+module.exports = sequelize => {
   const Checkin = sequelize.define("Checkin", {});
 
-  Checkin.associate = (models) => {
+  Checkin.associate = models => {
     Checkin.belongsTo(models.User);
   };
 

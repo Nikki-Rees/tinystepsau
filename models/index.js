@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 
 var fs = require('fs');

@@ -1,4 +1,3 @@
-/* eslint-disable */
 $(document).ready(() => {
   // Getting references to our form and inputs
   const loginForm = $("form.login");
@@ -27,7 +26,7 @@ $(document).ready(() => {
       email: userData.email,
       password: userData.password
     })
-      .then((data) => {
+      .then(data => {
         localStorage.setItem("id", data.id);
         localStorage.setItem("userEmail", data.email)
         window.location.replace("/checkin");
