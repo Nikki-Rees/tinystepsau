@@ -35,12 +35,12 @@ This project is licensed under the MIT license.
 
 ## Contribution
 
-This app was made by:
+This app was made with love by:
 - [Nikki Rees](https://github.com/Nikki-Rees) 
 - [Dan Swan](https://github.com/codenswan)
 - [Anna Chong](https://github.com/acho9138)
 
-## Credits
+## Credits/Technologies
 
 - The Coding Bootcamp at University of Sydney
 - Bootstrap
@@ -48,3 +48,6 @@ This app was made by:
 - Stack Overflow
 - Node.js
 - NPM
+- Chart.js
+- Nodemailer
+- SweetAlert2
