@@ -1,9 +1,8 @@
-/* eslint-disable */
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 const bcrypt = require("bcryptjs");
 
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
     email: {
@@ -21,15 +20,14 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  User.associate = (models) => {
+  User.associate = models => {
     // Associating User with Habits
     // If user is delete, delete associated habits
     User.belongsTo(models.Habit);
-
   };
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  User.prototype.validPassword = function (password) {
+  User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle

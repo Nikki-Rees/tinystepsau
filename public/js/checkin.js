@@ -1,8 +1,7 @@
-/* eslint-disable */
 //follow login.js and assign variables to match the form in checkin handlebars
-$("#checkin-button").click((event) => {
+$("#checkin-button").click(event => {
   event.preventDefault();
-  let userId = localStorage.getItem("id");
+  const userId = localStorage.getItem("id");
   Swal.fire({
     title: "Loading",
     showCancelButton: false,
@@ -11,8 +10,8 @@ $("#checkin-button").click((event) => {
     // html: "<pre><code>" + "You checked o" + "</code></pre>",
     onBeforeOpen() {
       Swal.showLoading();
-    },
-  }).then(function(result) {
+    }
+  }).then(result => {
     if (result.value) {
       //confirm
       return;
@@ -20,9 +19,9 @@ $("#checkin-button").click((event) => {
   });
   // Send the POST request.
   $.post("/api/checkin", {
-    UserId: userId,
+    UserId: userId
   })
-    .then((data) => {
+    .then(() => {
       Swal.close();
       Swal.fire({
         title: "You checked in your habit today!",
@@ -31,10 +30,10 @@ $("#checkin-button").click((event) => {
         showConfirmButton: true,
         confirmButtonText: "Okay",
         confirmButtonClass: "success",
-        buttonsStyling: true,
+        buttonsStyling: true
         //  timer: 1500,
         //  html: "<pre><code>" + info + "</code></pre>",
-      }).then(function(result) {
+      }).then(result => {
         if (result.value) {
           location.reload();
           return;
@@ -43,10 +42,9 @@ $("#checkin-button").click((event) => {
           location.reload();
           return;
         }
-        
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
     });
 });
