@@ -5,7 +5,7 @@ const activityInput = $("textarea#activity");
 const descriptionInput = $("textarea#description");
 const frequencyInput = $("textarea#frequency");
 
-$("#newHabit").click(() => {
+createHabitForm.on("submit", function(event) {
   event.preventDefault();
   const newHabit = {
     type: typeInput.val().trim(),
@@ -42,8 +42,9 @@ $(".habit").on("click", function () {
     HabitId: id,
   })
     .then((data) => {
-      console.log(data);
       // Reload the page to get the updated list
       window.location.replace("/checkin");
     });
+  
+  
 });
