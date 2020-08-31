@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint",
     "testdb": "NODE_ENV=test nodemon server.js",
-    "start": "node server.js",
+    "start": "NODE_ENV=development node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "watch": "nodemon server.js"
