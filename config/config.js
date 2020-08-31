@@ -8,10 +8,10 @@ module.exports = {
     dialect: "mysql"
   },
   test: {
-    username: "root",
-    password: "liaCM345!",
-    database: "tinysteps_db",
-    host: "localhost",
+    username: process.env.LOCAL_USERNAME,
+    password: process.env.LOCAL_PASSWORD,
+    database: process.env.LOCAL_DATABASE,
+    host: process.env.LOCAL_HOST,
     port: 3306,
     dialect: "mysql"
   },
